@@ -37,7 +37,7 @@ Un portafolio web moderno, rápido y optimizado creado para mostrar mis proyecto
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/EdwardCCB/tu-repo-de-portafolio.git
+   git clone https://github.com/EdwardCCB/portfolio.git
    ```
 
 2. Entra al directorio del proyecto:
