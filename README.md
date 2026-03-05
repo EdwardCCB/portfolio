@@ -1,5 +1,7 @@
 # 👨‍💻 Eduardo Marino | Portafolio Personal
 
+🌐 **Ver en vivo:** [https://edwardccb.github.io/portfolio/](https://edwardccb.github.io/portfolio/)
+
 Un portafolio web moderno, rápido y optimizado creado para mostrar mis proyectos, experiencia y habilidades como **Junior Developer y Game Developer**.
 
 ## ✨ Características
