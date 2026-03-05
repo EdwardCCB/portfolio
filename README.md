@@ -1,7 +1,5 @@
 # 👨‍💻 Eduardo Marino | Portafolio Personal
 
-(./public/preview.png) *(Puedes agregar una captura de pantalla de tu servidor local aquí)*
-
 Un portafolio web moderno, rápido y optimizado creado para mostrar mis proyectos, experiencia y habilidades como **Junior Developer y Game Developer**.
 
 ## ✨ Características
