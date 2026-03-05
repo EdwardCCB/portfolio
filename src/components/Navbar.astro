@@ -18,7 +18,12 @@ import { personal } from "../data/portfolio";
       <a href="#contact" class="nav-link">Contacto</a>
     </nav>
 
-    <a href="#contact" class="btn btn-primary navbar__cta">Contáctame</a>
+    <a
+      href="/portfolio/CV_EduardoMarino_EN.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-primary navbar__cta">Resume CV</a
+    >
 
     <button class="navbar__hamburger" id="hamburger" aria-label="Menu">
       <span></span>
@@ -36,7 +41,9 @@ import { personal } from "../data/portfolio";
     right: 0;
     z-index: 1000;
     padding: 1rem 0;
-    transition: background var(--transition-base), box-shadow var(--transition-base);
+    transition:
+      background var(--transition-base),
+      box-shadow var(--transition-base);
   }
 
   .navbar.scrolled {
@@ -82,7 +89,9 @@ import { personal } from "../data/portfolio";
     font-weight: 500;
     padding: 0.4rem 0.8rem;
     border-radius: 0.5rem;
-    transition: color var(--transition-fast), background var(--transition-fast);
+    transition:
+      color var(--transition-fast),
+      background var(--transition-fast);
     text-decoration: none;
   }
 
@@ -116,9 +125,15 @@ import { personal } from "../data/portfolio";
   }
 
   @media (max-width: 768px) {
-    .navbar__links { display: none; }
-    .navbar__cta { display: none; }
-    .navbar__hamburger { display: flex; }
+    .navbar__links {
+      display: none;
+    }
+    .navbar__cta {
+      display: none;
+    }
+    .navbar__hamburger {
+      display: flex;
+    }
   }
 </style>
 

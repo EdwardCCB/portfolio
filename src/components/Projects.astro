@@ -3,73 +3,178 @@ import { projects } from "../data/portfolio";
 ---
 
 <section id="projects" class="section projects">
-  <div class="ambient-glow" style="width:500px;height:500px;background:#15803d;top:10%;right:-15%;opacity:0.07;filter:blur(80px);"></div>
+  <div
+    class="ambient-glow"
+    style="width:500px;height:500px;background:#15803d;top:10%;right:-15%;opacity:0.07;filter:blur(80px);"
+  >
+  </div>
   <div class="container">
     <div class="section-heading reveal">
       <div class="section-label">03. Proyectos</div>
-      <h2 class="section-title">Mi <span class="gradient-text">Trabajo</span></h2>
+      <h2 class="section-title">
+        Mi <span class="gradient-text">Trabajo</span>
+      </h2>
       <div class="divider"></div>
-      <p class="section-subtitle">Proyectos que demuestran mi capacidad para resolver problemas reales.</p>
+      <p class="section-subtitle">Proyectos que demuestran mi capacidad.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="project-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web development</button>
+      <button class="filter-btn" data-filter="game">Game development</button>
     </div>
 
     <!-- Featured projects -->
     <div class="projects__featured">
-      {projects.filter(p => p.featured).map((project, i) => (
-        <div class="project-featured glass-card reveal" style={`transition-delay: ${i * 0.1}s`}>
-          <div class={`project-featured__visual bg-gradient-${i}`}>
-            <div class="project-visual-inner">
-              <span class="project-icon">🚀</span>
-            </div>
-          </div>
-          <div class="project-featured__content">
-            <div class="project-meta">
-              <span class="tag">Featured</span>
-              <div class="project-links">
-                <a href={project.github} target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-                {project.live && (
-                  <a href={project.live} target="_blank" rel="noopener" class="icon-link" aria-label="Live Demo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-                  </a>
-                )}
+      {
+        projects
+          .filter((p) => p.featured)
+          .map((project, i) => (
+            <div
+              class="project-featured glass-card reveal project-item"
+              data-category={project.category}
+              style={`transition-delay: ${i * 0.1}s`}
+            >
+              <div class={`project-featured__visual bg-gradient-${i}`}>
+                <div class="project-visual-inner">
+                  <span class="project-icon">🚀</span>
+                </div>
+              </div>
+              <div class="project-featured__content">
+                <div class="project-meta">
+                  <span class="tag">Featured</span>
+                  <div class="project-links">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener"
+                        class="icon-link"
+                        aria-label="GitHub"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                        </svg>
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener"
+                        class="icon-link"
+                        aria-label="Live Demo"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <h3 class="project-title">{project.title}</h3>
+                <p class="project-desc">{project.description}</p>
+                <div class="project-tags">
+                  {project.tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
               </div>
             </div>
-            <h3 class="project-title">{project.title}</h3>
-            <p class="project-desc">{project.description}</p>
-            <div class="project-tags">
-              {project.tags.map(tag => <span class="tag">{tag}</span>)}
-            </div>
-          </div>
-        </div>
-      ))}
+          ))
+      }
     </div>
 
     <!-- Other projects grid -->
     <h3 class="other-title reveal">Otros proyectos</h3>
     <div class="projects__grid">
-      {projects.filter(p => !p.featured).map((project, i) => (
-        <div class="project-card glass-card reveal" style={`transition-delay: ${i * 0.1}s`}>
-          <div class="project-card__header">
-            <span class="folder-icon">📁</span>
-            <div class="project-links">
-              <a href={project.github} target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-              {project.live && (
-                <a href={project.live} target="_blank" rel="noopener" class="icon-link" aria-label="Live">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-                </a>
-              )}
+      {
+        projects
+          .filter((p) => !p.featured)
+          .map((project, i) => (
+            <div
+              class="project-card glass-card reveal project-item"
+              data-category={project.category}
+              style={`transition-delay: ${i * 0.1}s`}
+            >
+              <div class="project-card__header">
+                <span class="folder-icon">📁</span>
+                <div class="project-links">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener"
+                      class="icon-link"
+                      aria-label="GitHub"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener"
+                      class="icon-link"
+                      aria-label="Live"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" x2="21" y1="14" y2="3" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+              <h4 class="project-card__title">{project.title}</h4>
+              <p class="project-card__desc">{project.description}</p>
+              <div class="project-tags project-tags--sm">
+                {project.tags.slice(0, 3).map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
             </div>
-          </div>
-          <h4 class="project-card__title">{project.title}</h4>
-          <p class="project-card__desc">{project.description}</p>
-          <div class="project-tags project-tags--sm">
-            {project.tags.slice(0, 3).map(tag => <span class="tag">{tag}</span>)}
-          </div>
-        </div>
-      ))}
+          ))
+      }
     </div>
   </div>
 </section>
@@ -78,7 +183,49 @@ import { projects } from "../data/portfolio";
   .projects {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    background: linear-gradient(
+      180deg,
+      var(--bg-primary) 0%,
+      var(--bg-secondary) 100%
+    );
+  }
+
+  /* Filters */
+  .project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .filter-btn:hover {
+    color: var(--text-primary);
+    border-color: rgba(34, 197, 94, 0.5);
+    background: rgba(34, 197, 94, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .filter-btn.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: var(--text-primary);
+    border-color: rgba(34, 197, 94, 0.5);
+  }
+
+  .project-item.hidden {
+    display: none !important;
   }
 
   /* Featured */
@@ -105,9 +252,15 @@ import { projects } from "../data/portfolio";
     border-radius: var(--radius-card) 0 0 var(--radius-card);
   }
 
-  .bg-gradient-0 { background: linear-gradient(135deg, #14532d, #166534); }
-  .bg-gradient-1 { background: linear-gradient(135deg, #164e63, #065f46); }
-  .bg-gradient-2 { background: linear-gradient(135deg, #7c2d12, #9f1239); }
+  .bg-gradient-0 {
+    background: linear-gradient(135deg, #14532d, #166534);
+  }
+  .bg-gradient-1 {
+    background: linear-gradient(135deg, #164e63, #065f46);
+  }
+  .bg-gradient-2 {
+    background: linear-gradient(135deg, #7c2d12, #9f1239);
+  }
 
   .project-visual-inner {
     font-size: 3.5rem;
@@ -139,7 +292,7 @@ import { projects } from "../data/portfolio";
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
     transition: all var(--transition-fast);
@@ -149,7 +302,7 @@ import { projects } from "../data/portfolio";
   .icon-link:hover {
     color: var(--text-primary);
     border-color: var(--accent-violet);
-    background: rgba(34,197,94,0.15);
+    background: rgba(34, 197, 94, 0.15);
     transform: translateY(-2px);
   }
 
@@ -201,7 +354,9 @@ import { projects } from "../data/portfolio";
     align-items: center;
   }
 
-  .folder-icon { font-size: 1.6rem; }
+  .folder-icon {
+    font-size: 1.6rem;
+  }
 
   .project-card__title {
     font-size: 1rem;
@@ -222,16 +377,59 @@ import { projects } from "../data/portfolio";
     flex: 1;
   }
 
-  .project-tags--sm { gap: 0.35rem; }
+  .project-tags--sm {
+    gap: 0.35rem;
+  }
 
   @media (max-width: 900px) {
-    .project-featured { grid-template-columns: 1fr; }
-    .project-featured__visual { border-radius: var(--radius-card) var(--radius-card) 0 0; min-height: 160px; }
-    .project-featured__content { padding: 1.5rem; }
-    .projects__grid { grid-template-columns: 1fr; }
+    .project-featured {
+      grid-template-columns: 1fr;
+    }
+    .project-featured__visual {
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+      min-height: 160px;
+    }
+    .project-featured__content {
+      padding: 1.5rem;
+    }
+    .projects__grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 1024px) {
-    .projects__grid { grid-template-columns: repeat(2, 1fr); }
+    .projects__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>
+
+<script>
+  const setupFilters = () => {
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const projectItems = document.querySelectorAll(".project-item");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+
+        projectItems.forEach((item) => {
+          if (
+            filter === "all" ||
+            item.getAttribute("data-category") === filter
+          ) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      });
+    });
+  };
+
+  setupFilters();
+  document.addEventListener("astro:after-swap", setupFilters);
+</script>

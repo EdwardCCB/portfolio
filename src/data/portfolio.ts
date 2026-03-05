@@ -2,14 +2,14 @@ export const personal = {
   name: "Eduardo Marino",
   title: "Junior Developer",
   subtitle: "Crafting digital experiences with passion and precision.",
-  bio: "Soy un Junior Developer y Game Developer con una gran pasión por crear experiencias interactivas y videojuegos. Me encanta aprender nuevas tecnologías, resolver problemas complejos y dar vida a ideas creativas tanto en la web como en motores gráficos.",
-  //bio2: "Cuando no estoy programando, me gusta explorar nuevas tecnologías, contribuir a proyectos open source y compartir conocimiento con la comunidad.",
-  location: "Barranquilla, Colombia",
+  bio: "Soy estudiante de último año de Ingeniería Informática y me apasiona la tecnología y el desarrollo de software. Estoy en constante aprendizaje de ReactJS, HTML, CSS, JavaScript, Java y Python, y tengo habilidades en Photoshop y Figma para crear marcas, logotipos y estructurar proyectos.",
+  bio2: "Me caracterizo por mi curiosidad, mi capacidad para resolver problemas y mi rápida adaptación a nuevos entornos. Aunque no tengo experiencia formal en desarrollo, me motiva asumir retos y aprovechar cada oportunidad para crecer profesionalmente.",
+  location: "Bogotá, Colombia",
   email: "eduardomarino1028@hotmail.com",
   available: true,
   stats: [
-    { label: "Proyectos Web", value: "10+" },
-    { label: "Juegos Creados", value: "5+" },
+    { label: "Proyectos Web", value: "3+" },
+    { label: "Juegos en Progreso", value: "1+" },
     { label: "Horas de Código", value: "A mil" },
     { label: "Ganas de aprender", value: "100%" },
   ],
@@ -23,35 +23,40 @@ export const personal = {
 
 export const skills = [
   // Frontend
-  { name: "React / Next.js", level: 95, category: "Frontend" },
-  { name: "TypeScript", level: 90, category: "Frontend" },
-  { name: "Vue.js / Nuxt", level: 78, category: "Frontend" },
-  { name: "CSS / Tailwind", level: 92, category: "Frontend" },
+  { name: "React / Next.js", level: 65, category: "Frontend" },
+  { name: "Vue.js / Nuxt", level: 35, category: "Frontend" },
+  { name: "TypeScript", level: 25, category: "Frontend" },
+  { name: "JavaScript", level: 45, category: "Frontend" },
+  { name: "CSS / Tailwind", level: 50, category: "Frontend" },
   // Backend
-  { name: "Node.js / Express", level: 88, category: "Backend" },
-  { name: "Python / Django", level: 80, category: "Backend" },
-  { name: "GraphQL / REST", level: 85, category: "Backend" },
-  { name: "PostgreSQL / MongoDB", level: 82, category: "Backend" },
+  { name: "Node.js / Express", level: 45, category: "Backend" },
+  { name: "Python / Django", level: 40, category: "Backend" },
+  { name: "GraphQL / REST", level: 35, category: "Backend" },
+  { name: "PostgreSQL / MongoDB", level: 55, category: "Backend" },
   // DevOps & Tools
-  { name: "Docker / Kubernetes", level: 72, category: "DevOps" },
-  { name: "AWS / GCP", level: 68, category: "DevOps" },
-  { name: "CI/CD / GitHub Actions", level: 80, category: "DevOps" },
-  { name: "Git", level: 95, category: "DevOps" },
+  { name: "Docker / Kubernetes", level: 65, category: "DevOps" },
+  { name: "CI/CD / GitHub Actions", level: 70, category: "DevOps" },
+  { name: "Git", level: 75, category: "DevOps" },
+  //Game Development
+  { name: "Unity", level: 35, category: "Game Development" },
+  { name: "Godot", level: 45, category: "Game Development" },
 ];
 
 export const techIcons = [
   { name: "React", icon: "⚛️" },
   { name: "TypeScript", icon: "🔷" },
+  { name: "JavaScript", icon: "🟨" },
   { name: "Node.js", icon: "🟢" },
   { name: "Python", icon: "🐍" },
   { name: "PostgreSQL", icon: "🐘" },
   { name: "MongoDB", icon: "🌿" },
   { name: "Docker", icon: "🐳" },
-  { name: "AWS", icon: "☁️" },
   { name: "GraphQL", icon: "◈" },
   { name: "Next.js", icon: "▲" },
   { name: "Vue.js", icon: "💚" },
   { name: "Git", icon: "🔀" },
+  { name: "Unity", icon: "🎮" },
+  { name: "Godot", icon: "🤖" },
 ];
 
 export const projects = [
@@ -59,21 +64,44 @@ export const projects = [
     title: "E-Commerce Platform",
     description:
       "Plataforma de comercio electrónico completa con carrito de compras, pagos con Stripe, gestión de inventario y panel de administración en tiempo real.",
-    tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Redis"],
-    github: "https://github.com",
-    live: "https://example.com",
+    tags: ["React.js", "JavaScript", "Vite", "Firebase"],
+    category: "web",
+    github: "https://github.com/EdwardCCB/E-commerce_project",
+    live: null,
     featured: true,
     gradient: "from-violet-600 to-indigo-600",
   },
   {
-    title: "Soon",
+    title: "Conversor de Moneda",
     description:
-      "Soon",
-    tags: [],
-    github: null,
+      "Este programa permite a los usuarios seleccionar una moneda de origen y una moneda de destino para realizar la conversión. Utiliza la API de ExchangeRate para obtener los tipos de cambio actualizados y calcular el monto convertido.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    category: "web",
+    github: "https://github.com/EdwardCCB/Conversor-de-Monedas",
     live: null,
     featured: false,
     gradient: "from-blue-600 to-sky-600",
+  },
+  {
+    title: "Encriptador de texto",
+    description:
+      "Prácticando lógica de programación: Challenge Encriptador de texto.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    category: "web",
+    github: "https://github.com/EdwardCCB/Encriptador-de-texto",
+    live: null,
+    featured: false,
+    gradient: "from-blue-600 to-sky-600",
+  },
+  {
+    title: "Juego (En Desarrollo)",
+    description: "Próximamente...",
+    tags: ["Godot", "GDScript", "WIP"],
+    category: "game",
+    github: null,
+    live: null,
+    featured: true,
+    gradient: "from-emerald-600 to-teal-600",
   },
 ];
 
@@ -84,7 +112,7 @@ export const experience = [
     company: "Universidad de la Costa",
     period: "2021 – 2022",
     description:
-      "Construí la interfaz de usuario de una app de finanzas personales desde cero. Optimicé el performance logrando un score Lighthouse de 98 y reduciendo el bundle size un 35%.",
+      "• Digitalización y organización de expedientes y documentos de empleados. • Apoyo en la incorporación de nuevo personal a SICUC. • Soporte técnico básico para resolver problemas con los equipos informáticos del departamento.",
     tech: []
   },
   {
@@ -95,5 +123,14 @@ export const experience = [
     description:
       "Titulo sobre algoritmos de optimización para sistemas distribuidos.",
     tech: ["Algoritmos", "Redes", "Bases de Datos"],
+  },
+  {
+    type: "education",
+    role: "Oracle Next Education",
+    company: "Alura LATAM",
+    period: "2024 – 2025",
+    description:
+      null,
+    tech: ["Java", "Springboots", "HTML", "CSS"],
   },
 ];

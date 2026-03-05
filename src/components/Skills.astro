@@ -4,23 +4,31 @@ import SkillBars from "./react/SkillBars.tsx";
 ---
 
 <section id="skills" class="section skills">
-  <div class="ambient-glow" style="width:500px;height:500px;background:#3b82f6;bottom:-20%;left:-10%;opacity:0.07;filter:blur(80px);"></div>
+  <div
+    class="ambient-glow"
+    style="width:500px;height:500px;background:#3b82f6;bottom:-20%;left:-10%;opacity:0.07;filter:blur(80px);"
+  >
+  </div>
   <div class="container">
     <div class="section-heading reveal">
       <div class="section-label">02. Stack Tecnológico</div>
-      <h2 class="section-title">Mis <span class="gradient-text">Skills</span></h2>
+      <h2 class="section-title">
+        Mis <span class="gradient-text">Skills</span>
+      </h2>
       <div class="divider"></div>
-      <p class="section-subtitle">Tecnologías con las que construyo soluciones robustas y escalables.</p>
+      <p class="section-subtitle">Tecnologías con las que construyo.</p>
     </div>
 
     <!-- Tech icon grid -->
     <div class="tech-grid reveal">
-      {techIcons.map((tech) => (
-        <div class="tech-icon-card glass-card">
-          <span class="tech-emoji">{tech.icon}</span>
-          <span class="tech-name">{tech.name}</span>
-        </div>
-      ))}
+      {
+        techIcons.map((tech) => (
+          <div class="tech-icon-card glass-card">
+            <span class="tech-emoji">{tech.icon}</span>
+            <span class="tech-name">{tech.name}</span>
+          </div>
+        ))
+      }
     </div>
 
     <!-- Skill bars (React island) -->
@@ -34,7 +42,11 @@ import SkillBars from "./react/SkillBars.tsx";
   .skills {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    background: linear-gradient(
+      180deg,
+      var(--bg-secondary) 0%,
+      var(--bg-primary) 100%
+    );
   }
 
   .tech-grid {
