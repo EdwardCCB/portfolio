@@ -1,0 +1,302 @@
+---
+import { personal } from "../data/portfolio";
+import ContactForm from "./react/ContactForm.tsx";
+---
+
+<section id="contact" class="section contact">
+  <div
+    class="ambient-glow"
+    style="width:500px;height:500px;background:#15803d;bottom:-20%;right:-10%;opacity:0.1;filter:blur(80px);"
+  >
+  </div>
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">05. Contacto</div>
+      <h2 class="section-title">
+        Hablemos <span class="gradient-text">juntos</span>
+      </h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">
+        ¿Tienes un proyecto en mente? Me encantaría escucharte.
+      </p>
+    </div>
+
+    <div class="contact__grid">
+      <!-- Info column -->
+      <div class="contact__info reveal">
+        <div class="contact__cta glass-card">
+          <div class="cta-glow"></div>
+          <div class="cta-content">
+            <span class="cta-emoji">👋</span>
+            <h3 class="cta-title">¡Estoy disponible!</h3>
+            <p class="cta-desc">
+              Actualmente estoy abierto a nuevas oportunidades freelance y
+              proyectos de largo plazo. Si tu proyecto me emociona,
+              definitivamente podemos trabajar juntos.
+            </p>
+            <div class="cta-status">
+              <span class="status-dot"></span>
+              <span>Disponible para trabajar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__direct">
+          <h4 class="direct-title">Contacto directo</h4>
+          <div class="direct-links">
+            <a href={personal.socials.email} class="direct-link glass-card">
+              <div class="direct-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
+                    d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+                >
+              </div>
+              <div>
+                <div class="direct-link-label">Email</div>
+                <div class="direct-link-value">{personal.email}</div>
+              </div>
+            </a>
+            <a
+              href={personal.socials.linkedin}
+              target="_blank"
+              rel="noopener"
+              class="direct-link glass-card"
+            >
+              <div class="direct-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  ><path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  ></path></svg
+                >
+              </div>
+              <div>
+                <div class="direct-link-label">LinkedIn</div>
+                <div class="direct-link-value">eduardo-s-marino</div>
+              </div>
+            </a>
+            <a
+              href={personal.socials.github}
+              target="_blank"
+              rel="noopener"
+              class="direct-link glass-card"
+            >
+              <div class="direct-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  ><path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                  ></path></svg
+                >
+              </div>
+              <div>
+                <div class="direct-link-label">GitHub</div>
+                <div class="direct-link-value">@EdwardCCB</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form column -->
+      <div class="contact__form-col reveal" style="transition-delay:0.15s">
+        <div class="glass-card contact__form-card">
+          <h3 class="form-card-title">Envíame un mensaje</h3>
+          <ContactForm client:visible />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      180deg,
+      var(--bg-primary) 0%,
+      var(--bg-secondary) 100%
+    );
+  }
+
+  .contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* CTA Card */
+  .contact__cta {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-glow {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.15;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cta-emoji {
+    font-size: 2.2rem;
+  }
+
+  .cta-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .cta-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .cta-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: #34d399;
+    font-weight: 600;
+    margin-top: 0.25rem;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #34d399;
+    border-radius: 50%;
+    animation: pulse-badge 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-badge {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 6px rgba(52, 211, 153, 0);
+    }
+  }
+
+  /* Direct links */
+  .direct-title {
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .direct-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .direct-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    transition: all var(--transition-base);
+  }
+
+  .direct-link:hover .direct-link-label,
+  .direct-link:hover .direct-link-value {
+    color: var(--text-primary);
+  }
+
+  .direct-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-violet);
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+  }
+
+  .direct-link:hover .direct-icon {
+    background: rgba(34, 197, 94, 0.25);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+  }
+
+  .direct-link-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color var(--transition-fast);
+  }
+
+  .direct-link-value {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+  }
+
+  /* Form card */
+  .contact__form-card {
+    padding: 2rem;
+  }
+
+  .form-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 900px) {
+    .contact__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

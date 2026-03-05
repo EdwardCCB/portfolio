@@ -1,0 +1,160 @@
+---
+import { experience } from "../data/portfolio";
+---
+
+<section id="experience" class="section experience">
+  <div class="ambient-glow" style="width:400px;height:400px;background:#06b6d4;top:20%;left:-10%;opacity:0.07;filter:blur(80px);"></div>
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">04. Trayectoria</div>
+      <h2 class="section-title">Mi <span class="gradient-text">Experiencia</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">El camino recorrido y las lecciones aprendidas.</p>
+    </div>
+
+    <div class="timeline">
+      {experience.map((item, i) => (
+        <div class={`timeline__item ${item.type === 'education' ? 'timeline__item--education' : ''} reveal`} style={`transition-delay: ${i * 0.12}s`}>
+          <!-- Connector -->
+          <div class="timeline__connector">
+            <div class="timeline__dot">
+              {item.type === 'work'
+                ? <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                : <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              }
+            </div>
+            {i < experience.length - 1 && <div class="timeline__line"></div>}
+          </div>
+
+          <!-- Card -->
+          <div class="timeline__card glass-card">
+            <div class="timeline__card-top">
+              <div>
+                <h3 class="timeline__role">{item.role}</h3>
+                <p class="timeline__company">{item.company}</p>
+              </div>
+              <span class="timeline__period tag">{item.period}</span>
+            </div>
+            <p class="timeline__description">{item.description}</p>
+            <div class="timeline__tech">
+              {item.tech.map(t => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  }
+
+  .timeline {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline__item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .timeline__connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+  }
+
+  .timeline__dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px rgba(21,128,61,0.4);
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline__item--education .timeline__dot {
+    background: linear-gradient(135deg, #059669, #0891b2);
+    box-shadow: 0 0 20px rgba(5,150,105,0.4);
+  }
+
+  .timeline__line {
+    width: 2px;
+    flex: 1;
+    min-height: 30px;
+    background: linear-gradient(180deg, rgba(34,197,94,0.4) 0%, rgba(34,197,94,0.1) 100%);
+    margin: 6px 0;
+  }
+
+  .timeline__card {
+    margin-bottom: 1.5rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .timeline__card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .timeline__role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline__company {
+    color: var(--accent-violet);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .timeline__period {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .timeline__description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .timeline__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 600px) {
+    .timeline__item { grid-template-columns: 36px 1fr; gap: 1rem; }
+    .timeline__dot { width: 34px; height: 34px; }
+    .timeline__card-top { flex-direction: column; }
+  }
+</style>

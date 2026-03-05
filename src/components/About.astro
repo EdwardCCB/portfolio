@@ -1,0 +1,233 @@
+---
+import { personal } from "../data/portfolio";
+---
+
+<section id="about" class="section about">
+  <div
+    class="ambient-glow"
+    style="width:400px;height:400px;background:#15803d;top:-10%;right:-15%;opacity:0.08;filter:blur(80px);"
+  >
+  </div>
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">01. Sobre mí</div>
+      <h2 class="section-title">
+        Un poco de <span class="gradient-text">mi historia</span>
+      </h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="about__grid">
+      <!-- Avatar column -->
+      <div class="about__avatar-col reveal">
+        <div class="avatar-wrapper">
+          <div class="avatar-glow"></div>
+          <div class="avatar-frame">
+            <div class="avatar-initials">EM</div>
+          </div>
+          <!-- decorative ring -->
+          <div class="avatar-ring"></div>
+          <!-- floating stat -->
+          <div class="avatar-stat glass-card">
+            <span class="stat-num">1+</span>
+            <span class="stat-lbl">Años de<br />experiencia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text column -->
+      <div class="about__text-col reveal" style="transition-delay:0.15s">
+        <p class="about__paragraph">{personal.bio}</p>
+        <p class="about__paragraph">{personal.bio2}</p>
+
+        <!-- Stats row -->
+        <div class="about__stats">
+          {
+            personal.stats.map((s) => (
+              <div class="about__stat glass-card">
+                <span class="about__stat-value gradient-text">{s.value}</span>
+                <span class="about__stat-label">{s.label}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="about__ctas">
+          <a href="#contact" class="btn btn-primary">Trabajemos juntos</a>
+          <a
+            href={personal.socials.github}
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+          >
+            Ver GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      180deg,
+      var(--bg-primary) 0%,
+      var(--bg-secondary) 100%
+    );
+  }
+
+  .about__grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  /* Avatar */
+  .avatar-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+  }
+
+  .avatar-glow {
+    position: absolute;
+    inset: -20px;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.2;
+  }
+
+  .avatar-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #1e1b4b, #1e3a5f);
+    border: 2px solid var(--border-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .avatar-initials {
+    font-size: 5rem;
+    font-weight: 900;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .avatar-ring {
+    position: absolute;
+    inset: -12px;
+    border: 2px dashed rgba(34, 197, 94, 0.25);
+    border-radius: 36px;
+    animation: spin 20s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .avatar-stat {
+    position: absolute;
+    bottom: -1rem;
+    right: -2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    z-index: 2;
+  }
+
+  .stat-num {
+    font-size: 1.6rem;
+    font-weight: 900;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-lbl {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+  }
+
+  /* Text */
+  .about__text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about__paragraph {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .about__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .about__stat {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .about__stat-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+
+  .about__stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .about__ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .about__grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+    .about__ctas {
+      justify-content: center;
+    }
+    .about__stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .avatar-stat {
+      right: 0;
+    }
+  }
+</style>
